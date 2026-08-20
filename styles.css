@@ -1,0 +1,113 @@
+:root {
+  color-scheme: light dark;
+  --canvas: #f1f3f1;
+  --surface: #ffffff;
+  --ink: #131713;
+  --muted: #616963;
+  --brand: #1e4a38;
+  --border: #dfe5e0;
+  --accent: #f4cb57;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: #0e100f;
+    --surface: #252a26;
+    --ink: #f0f3f1;
+    --muted: #9ba49e;
+    --brand: #8cc8a9;
+    --border: #39413b;
+    --accent: #d9b74f;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", sans-serif;
+  line-height: 1.72;
+  letter-spacing: 0;
+}
+
+header, main, footer {
+  width: min(760px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 76px;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+nav { display: flex; gap: 18px; }
+
+nav a, .text-link {
+  color: var(--brand);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+main { padding: 64px 0 72px; }
+
+h1, h2 { margin: 0; line-height: 1.24; }
+h1 { max-width: 680px; font-size: clamp(36px, 8vw, 56px); }
+h2 { margin-top: 42px; font-size: 22px; }
+p, li { color: var(--muted); font-size: 17px; }
+
+.lead {
+  max-width: 650px;
+  margin: 18px 0 40px;
+  color: var(--ink);
+  font-size: 20px;
+}
+
+.notice {
+  margin: 26px 0;
+  padding: 18px 20px;
+  border-left: 5px solid var(--accent);
+  background: var(--surface);
+}
+
+.notice p { margin: 0; }
+
+.contact {
+  margin-top: 34px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 8px;
+}
+
+.contact p { margin: 5px 0; }
+
+footer {
+  padding: 24px 0 36px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 620px) {
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px 0;
+  }
+
+  nav { flex-wrap: wrap; gap: 10px 16px; }
+  main { padding-top: 44px; }
+}

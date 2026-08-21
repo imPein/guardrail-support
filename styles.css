@@ -60,6 +60,8 @@ nav a, .text-link {
   text-decoration: none;
 }
 
+nav a[aria-current="page"] { color: var(--ink); }
+
 main { padding: 64px 0 72px; }
 
 h1, h2 { margin: 0; line-height: 1.24; }
@@ -93,6 +95,111 @@ p, li { color: var(--muted); font-size: 17px; }
 
 .contact p { margin: 5px 0; }
 
+.contact-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 36px;
+  align-items: center;
+  margin-top: 36px;
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.contact-panel h2,
+.email-contact h2 {
+  margin-top: 6px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--brand);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.copy-row {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+  margin-top: 24px;
+}
+
+.copy-row code {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  min-width: 0;
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--ink);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 17px;
+  overflow-wrap: anywhere;
+}
+
+.copy-row button {
+  min-height: 48px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--brand);
+  color: var(--surface);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.copy-row button:focus-visible,
+.qr-figure a:focus-visible,
+.text-link:focus-visible,
+nav a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.copy-status {
+  min-height: 25px;
+  margin: 8px 0 0;
+  color: var(--brand);
+  font-size: 14px;
+}
+
+.qr-figure {
+  margin: 0;
+  text-align: center;
+}
+
+.qr-figure a { display: block; }
+
+.qr-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+.qr-figure figcaption {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.email-contact {
+  margin-top: 34px;
+  padding-top: 6px;
+}
+
+.privacy-note {
+  margin-top: 42px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+}
+
 footer {
   padding: 24px 0 36px;
   border-top: 1px solid var(--border);
@@ -110,4 +217,18 @@ footer {
 
   nav { flex-wrap: wrap; gap: 10px 16px; }
   main { padding-top: 44px; }
+
+  .contact-panel {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 22px;
+  }
+
+  .qr-figure {
+    width: min(100%, 280px);
+    margin: 0 auto;
+  }
+
+  .copy-row { flex-direction: column; }
+  .copy-row button { width: 100%; }
 }

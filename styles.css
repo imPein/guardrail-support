@@ -96,10 +96,6 @@ p, li { color: var(--muted); font-size: 17px; }
 .contact p { margin: 5px 0; }
 
 .contact-panel {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 240px;
-  gap: 36px;
-  align-items: center;
   margin-top: 36px;
   padding: 30px;
   border: 1px solid var(--border);
@@ -168,7 +164,8 @@ nav a:focus-visible {
 }
 
 .qr-figure {
-  margin: 0;
+  width: min(100%, 300px);
+  margin: 28px auto 0;
   text-align: center;
 }
 
@@ -219,14 +216,12 @@ footer {
   main { padding-top: 44px; }
 
   .contact-panel {
-    grid-template-columns: 1fr;
-    gap: 28px;
     padding: 22px;
   }
 
   .qr-figure {
     width: min(100%, 280px);
-    margin: 0 auto;
+    margin-top: 24px;
   }
 
   .copy-row { flex-direction: column; }
